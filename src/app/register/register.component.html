@@ -1,0 +1,51 @@
+<div class="register">
+    <div class="personal-info">
+        <h1>Register</h1>
+
+        <form [formGroup]="loginForm">
+            <!--Email-->
+            <div id="email" class="info-fields">
+                <input #anyEmail type="email" formControlName="email" placeholder="Email">
+                <br>
+                <span *ngIf="email?.invalid && email?.touched && !email?.errors?.pattern" class="validation">Email is
+                    required</span>
+                <span *ngIf="email?.errors?.pattern" class="validation">Email is not correct</span>
+            </div>
+            <!--Password-->
+            <div id="password" class="info-fields">
+                <input #anyPassword type="password" formControlName="password" placeholder="Password" required>
+                <br>
+                <span *ngIf="password?.invalid && password?.touched && !password?.errors?.pattern"
+                    class="validation">Password is required</span>
+                <span *ngIf="password?.errors?.pattern" class="validation">Password is not correct</span>
+            </div>
+            <!--Confirm Password-->
+            <div id="confirm-password" class="info-fields">
+                <input #confPassword type="password" appConfirmEqualValidator="password"
+                    formControlName="confirmPassword" placeholder="Confirm password" required>
+                <br>
+                <span *ngIf="confirmPassword?.dirty && confirmPassword?.errors?.notEqual"
+                    class="validation">Confirmation
+                    does not match
+                    password</span>
+            </div>
+
+            <div id="agreement" class="info-fields">
+                <input type="checkbox" (click)="agreeInfo()">
+                <p id="agree" [ngClass]="{
+                red: textAgreeColor === 'red'
+            }">I agree to Terms and Conditions</p>
+            </div>
+
+            <div id="submit" class="info-fields">
+                <button [disabled]="disabled" (click)="submitInfo(anyEmail, anyPassword, confPassword)"
+                    class="submit-button">Submit</button>
+                <span id="err-data" *ngIf="!correctnessMarker">Enter basic data</span>
+            </div>
+        </form>
+
+    </div>
+    <div id="img">
+        <img src="" alt="">
+    </div>
+</div>

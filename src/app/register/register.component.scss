@@ -1,0 +1,64 @@
+.register {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+    border: 2px solid darkgreen;
+    h1 {
+        margin: 5px 0;
+        text-align: left;
+    }
+}
+.validation {
+    margin: 5px 0;
+    color: red;
+    font-size: 10px;
+}
+.personal-info {
+    margin: 20px 0 10px 100px;
+    width: 50%;
+}
+#img {
+    width: 50%;
+}
+.info-fields {
+    margin: 15px 0;
+    text-align: left;
+    height: 60px;
+    input {
+        width: 250px;
+        height: 30px;
+    }
+    input.ng-invalid {
+        border-left: 7px solid red;
+    }
+    input.ng-valid {
+        border-left: 7px solid green;
+    }
+}
+#agreement {
+    display: flex;
+    height: 30px;
+    input {
+        width: 20px;
+        height: 20px;
+    }
+}
+#agree {
+    font-size: 15px;
+    color: #000;
+    margin-top: 5px;
+
+    &.red {
+        color: red;
+    }
+}
+#err-data{
+    margin-left: 10px;
+    color: red;
+}
+.submit-button {
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+}
